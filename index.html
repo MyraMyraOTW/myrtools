@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Savage Enemy Generator</title>
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<!-- CSS Stylesheets -->
+	<!-- Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/tether.min.css">
+	<script src="scripts/tether.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+	<!-- Enemy Generator Javascript -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/eg.css"> </head>
+
+<body>
+	<div class="jumbotron">
+		<div class="genLoc">
+			<h1>Wild Wastes</h1>
+			<p class="lead">Fallout Savage Conversion</p>
+		</div>
+	</div>
+	<nav class="navbar navbar-masthead navbar-default navbar-fixed-top" id="topNav">
+		<div class="container"> <a class="navbar-brand" href="#">WildWastes<span class="sr-only">(current)</span></a>
+			<ul class="nav navbar-nav">
+				<li class="nav-item"> <a class="nav-link" href="enemyGen.html">E-Gen</a></li>
+				<li class="nav-item"> <a class="nav-link" href="lootGen.html">L-Gen</a></li>
+				<li class="nav-item"><a class="nav-link" href="compendium.html">Codex</a></li>
+				<li class="nav-item"><a class="nav-link" href="map.html">Map</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="card-deck-wrapper">
+			<div class="card-deck">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="card-title">Wild Wastes</h4>
+						<h6 class="card-subtitle">Welcome Wastelander!</h6> 
+					</div>
+					<div class="card-title-block"><img src="img/Wasteland.jpg" class="img-fluid" alt="Card image" style="width:100%"></div>
+					<div class="card-block">
+						<p class="card-text">Wild Wastes takes place in the Fallout Setting published by Bethesda and originally, Interplay. The modified timeline of this Setting does not include the Chosen One, Lone Wanderer, or Sole Survivor of the Fallout games. Due to the main heroes not being available to save the day many enemies and major factions continue to operate. The Enclave’s forces still roam the wastes committing atrocities to bring back the glory of the former U.S. Even the Master still operates out of Mariposa with his super mutant army growing stronger with every abducted human. The wasteland is out for the taking and nothing is completed by single characters. Begin to rewrite Fallout history within a Savage World…</p>
+					</div>
+				</div>
+			</div>
+			<div class="card-deck">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="card-title">Enemy Generator</h4>
+						<h6 class="card-subtitle">Creepy!</h6> 
+					</div>
+					<div class="card-title-block"><img src="img/city.jpg" class="img-fluid" alt="Card image" style="width:100%"></div>
+					<div class="card-block">
+						<p class="card-text">Need to generate a quick group of enemies for your party to crush under their boots? Use the generator to make a group of enemies with weapons, armour and gear appear in your world to use at your whim!</p>
+						<a class="btn btn-primary" href="enemyGen.html">E-GEN</a>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<h4 class="card-title">Loot Generator</h4>
+						<h6 class="card-subtitle">Get Your Loot Here!</h6> 
+					</div>
+					<div class="card-title-block"><img src="img/rrocket.jpg" class="img-fluid" alt="Card image" style="width:100%"></div>
+					<div class="card-block">
+						<p class="card-text">Deciding the type of loot to give your players can sometimes be a tough choice. Make it easy with the loot generator and send your players away with a box of sugar bombs or a fat man!</p>
+						<a class="btn btn-primary" href="lootGen.html">L-GEN</a>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<h4 class="card-title">Codex</h4>
+						<h6 class="card-subtitle">Learn To Rule The Wastes!</h6>
+					</div>
+					<div class="card-title-block"><img src="img/coast.jpg" class="img-fluid" alt="Card image" style="width:100%"></div>
+					<div class="card-block">
+						<p class="card-text">Learning to master the Wild Wasteland is usually a tough job without the guidance of friendly wastelanders. Check out the locales, creeps, and laws of the wastes in the WildWastes Codex!</p>
+						<a class="btn btn-primary" href="compendium.html">CODEX</a>
+					</div>
+				</div>
+			</div>
+			<div class="card-deck">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="card-title">Map</h4>
+						<h6 class="card-subtitle">Apocalypse World!</h6>
+					</div>
+					<div class="card-title-block"><img src="img/f4map.jpg" class="img-fluid" alt="Card image" style="width:100%"></div>
+					<div class="card-block">
+						<p class="card-text">The wasteland is a big place and knowing the "physical" locations of wasteland locales is always a key tool. Place your players on the Long 15 and get them moving to wherever they want to go!</p>
+						<a class="btn btn-primary" href="map.html">MAP</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container"> <span>&copy; Myriad</span> </div>
+	</footer>
+
+</html>

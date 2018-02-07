@@ -1,0 +1,236 @@
+<html>
+
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta charset="utf-8">
+	<title>Savage Enemy Generator</title>
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<!-- CSS Stylesheets -->
+	<!-- Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/tether.min.css">
+	<script src="scripts/tether.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+	<!-- Enemy Generator Javascript -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/eg.css">
+	<style>
+		#map {
+			height: 100%;
+		}
+		
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<!-- Bootstrap Designed -->
+
+<body>
+	<div>
+		<nav class="navbar navbar-masthead navbar-default navbar-fixed-top" id="topNav">
+			<div class="container"> <a class="navbar-brand" href="index.html">WildWastes</a>
+				<ul class="nav navbar-nav">
+					<li class="nav-item"> <a class="nav-link" href="enemyGen.html">E-Gen</a></li>
+					<li class="nav-item"> <a class="nav-link" href="lootGen.html">L-Gen</a> </li>
+					<li class="nav-item"><a class="nav-link" href="compendium.html">Codex</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">Map<span class="sr-only">(current)</span></a></li>
+				</ul>
+			</div>
+		</nav>
+		<div id="map"></div>
+		<footer class="footer">
+			<div class="container"> <span>&copy; Myriad</span> </div>
+		</footer>
+	</div>
+	<script>
+		var map;
+
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: {
+					lat: 37.774358884541215
+					, lng: -122.45085431787106
+				}
+				, disableDefaultUI: true
+				, zoomControl: true
+				, zoomControlOptions: {
+					position: google.maps.ControlPosition.LEFT_CENTER
+				}
+				, styles: [{
+					"featureType": "all"
+					, "elementType": "labels.text"
+					, "stylers": [{
+						"color": "#14f074"
+					}, {
+						"visibility": "simplified"
+					}, {
+						"saturation": "23"
+					}, {
+						"lightness": "19"
+					}, {
+						"weight": "1.19"
+					}, {
+						"gamma": "0.00"
+					}]
+				}, {
+					"featureType": "all"
+					, "elementType": "labels.text.fill"
+					, "stylers": [{
+						"color": "#14f074"
+					}]
+				}, {
+					"featureType": "all"
+					, "elementType": "labels.text.stroke"
+					, "stylers": [{
+						"color": "#14f074"
+					}]
+				}, {
+					"featureType": "all"
+					, "elementType": "labels.icon"
+					, "stylers": [{
+						"color": "#14f074"
+					}]
+				}, {
+					"featureType": "administrative"
+					, "elementType": "geometry"
+					, "stylers": [{
+						"visibility": "on"
+					}, {
+						"color": "#008c34"
+					}]
+				}, {
+					"featureType": "landscape"
+					, "elementType": "all"
+					, "stylers": [{
+						"color": "#007e34"
+					}]
+				}, {
+					"featureType": "landscape"
+					, "elementType": "labels.text.fill"
+					, "stylers": [{
+						"color": "#14f074"
+					}]
+				}, {
+					"featureType": "poi"
+					, "elementType": "all"
+					, "stylers": [{
+						"visibility": "off"
+					}]
+				}, {
+					"featureType": "road"
+					, "elementType": "all"
+					, "stylers": [{
+						"saturation": -100
+					}, {
+						"lightness": "100"
+					}, {
+						"color": "#005c26"
+					}]
+				}, {
+					"featureType": "road"
+					, "elementType": "geometry.stroke"
+					, "stylers": [{
+						"visibility": "off"
+					}]
+				}, {
+					"featureType": "road"
+					, "elementType": "labels.text"
+					, "stylers": [{
+						"color": "#14f074"
+					}]
+				}, {
+					"featureType": "road"
+					, "elementType": "labels.text.fill"
+					, "stylers": [{
+						"weight": "1.49"
+					}]
+				}, {
+					"featureType": "road"
+					, "elementType": "labels.text.stroke"
+					, "stylers": [{
+						"visibility": "off"
+					}]
+				}, {
+					"featureType": "road.highway"
+					, "elementType": "geometry.stroke"
+					, "stylers": [{
+						"gamma": "6.20"
+					}, {
+						"saturation": "30"
+					}]
+				}, {
+					"featureType": "road.highway"
+					, "elementType": "labels"
+					, "stylers": [{
+						"visibility": "on"
+					}]
+				}, {
+					"featureType": "road.highway"
+					, "elementType": "labels.text"
+					, "stylers": [{
+						"visibility": "simplified"
+					}, {
+						"invert_lightness": true
+					}, {
+						"color": "#14f074"
+					}]
+				}, {
+					"featureType": "road.highway"
+					, "elementType": "labels.text.stroke"
+					, "stylers": [{
+						"visibility": "on"
+					}, {
+						"saturation": "52"
+					}, {
+						"lightness": "10"
+					}, {
+						"weight": "6.63"
+					}, {
+						"invert_lightness": true
+					}]
+				}, {
+					"featureType": "road.highway"
+					, "elementType": "labels.icon"
+					, "stylers": [{
+						"visibility": "off"
+					}]
+				}, {
+					"featureType": "road.arterial"
+					, "elementType": "labels.icon"
+					, "stylers": [{
+						"visibility": "off"
+					}]
+				}, {
+					"featureType": "transit"
+					, "elementType": "all"
+					, "stylers": [{
+						"visibility": "off"
+					}]
+				}, {
+					"featureType": "water"
+					, "elementType": "all"
+					, "stylers": [{
+						"color": "#002b0d"
+					}, {
+						"visibility": "on"
+					}]
+				}]
+				, zoom: 13
+			});
+			var cAreas = new google.maps.KmlLayer('http://myr-tools.ca/KML/Fallout.kmz', {
+				preserveViewport: true
+			});
+			cAreas.setMap(map);
+		}
+	</script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZSBSW9Nlmx2SxFR_6rR2MZpuIhzVJvPw&callback=initMap"></script>
+</body>
+
+</html>

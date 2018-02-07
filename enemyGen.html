@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Savage Enemy Generator</title>
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<!-- CSS Stylesheets -->
+	<!-- Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/tether.min.css">
+	<script src="scripts/tether.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+	<!-- Enemy Generator Javascript -->
+	<script src="scripts/EnemyGen.js"></script>
+	<script src="scripts/enemyModules/raider.js"></script>
+	<script src="scripts/enemyModules/enclave.js"></script>
+	<script src="scripts/enemyModules/bos.js"></script>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/eg.css"> </head>
+<!-- Bootstrap Designed -->
+
+<body>
+	<nav class="navbar navbar-masthead navbar-default navbar-fixed-top" id="topNav">
+		<div class="container"> <a class="navbar-brand" href="index.html">WildWastes</a>
+			<ul class="nav navbar-nav">
+				<li class="nav-item active"> <a class="nav-link" href="#">E-Gen<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item"> <a class="nav-link" href="lootGen.html">L-Gen</a> </li>
+				<li class="nav-item"><a class="nav-link" href="compendium.html">Codex</a></li>
+				<li class="nav-item"><a class="nav-link" href="map.html">Map</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="jumbotron">
+		<div class="genLoc">
+			<h1>E-Gen</h1>
+			<p class="lead">WildWastes NPC Generator</p>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#singleSelModal">Single Gen</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#multiSelModal">Multi. Gen</button>
+		</div>
+	</div>
+	<div class="container">
+		<div class="card-columns" id="removeList"> </div>
+	</div>
+	<!-- Selection Modal -->
+	<div class="modal fade" id="multiSelModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"> <a class="close" data-dismiss="modal">&times;</a>
+					<h4 class="modal-title">Encounter Generator</h4> </div>
+				<div class="modal-body">
+					<label for="enemySelect">Enemy Type</label>
+					<select class="form-control" data-width="100%" data-live-search="true" id="multiEnemySelect">
+						<option>Raider</option>
+						<option>Slaver</option>
+						<option>Caravan Guard</option>
+						<option>Town Guard</option>
+						<option>Enclave</option>
+						<option>BOS</option>
+					</select>
+					<label for="extraToGen">Amount to Generate</label>
+					<input type="number" class="form-control" data-width="100%" id="extraToGen"> </div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="enemyEncounter">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="singleSelModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"> <a class="close" data-dismiss="modal">&times;</a>
+					<h4 class="modal-title">Encounter Generator</h4> </div>
+				<div class="modal-body">
+					<label for="enemySelect">Enemy Type</label>
+					<select class="form-control" data-width="100%" data-live-search="true" id="singleEnemySelect">
+						<option>Raider</option>
+						<option>Slaver</option>
+						<option>Caravan Guard</option>
+						<option>Town Guard</option>
+						<option>Enclave</option>
+						<option>BOS</option>
+					</select>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="enemySubmit">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container"> <span>&copy; Myriad</span> </div>
+	</footer>
+	<script>
+		$(document).ready(function () {
+			var id = 0;
+			$(document).on('click', '.close', function () {
+				var $target = $(this).parents('.card');
+				$target.hide('fast', function () {
+					$target.remove();
+				});
+			});
+			$('#enemySubmit').click(function () {
+				$('#singleSelModal').modal('toggle');
+				var enemyType = $('#singleEnemySelect').val();
+				gen(enemyType);
+			});
+			$('#enemyEncounter').click(function () {
+				$('#multiSelModal').modal('toggle');
+				var enemyType = $('#multiEnemySelect').val();
+				var amount = parseInt($('#extraToGen').val());
+				if (isNaN(amount) || amount < 0) {
+					amount = 0;
+				}
+				encounter(amount, enemyType);
+			});
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Savage Enemy Generator</title>
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<!-- CSS Stylesheets -->
+	<!-- Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/tether.min.css">
+	<script src="scripts/tether.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+	<!-- Enemy Generator Javascript -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/eg.css"> </head>
+<!-- Bootstrap Designed -->
+
+<body>
+	<nav class="navbar navbar-masthead navbar-default navbar-fixed-top" id="topNav">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">WildWastes</a>
+			<ul class="nav navbar-nav">
+				<li class="nav-item"> <a class="nav-link" href="enemyGen.html">E-Gen</a></li>
+				<li class="nav-item"> <a class="nav-link" href="lootGen.html">L-Gen</a> </li>
+				<li class="nav-item active"><a class="nav-link" href="compendium.html">Codex<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link" href="map.html">Map</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="jumbotron">
+		<div class="genLoc">
+			<h1>Codex</h1>
+			<p class="lead">WildWastes Codex</p>
+		</div>
+	</div>
+	<div class="container" id="cDexContainer">
+		<h2 class="centeredText">MYR-TOOLS UNIFIED CODEX SYSTEM</h2>
+		<h2 class="centeredText">COPYRIGHT 2016-2077 MYR-TOOLS</h2>
+		<h2 class="centeredText">-Server 1-</h2>
+		<br>
+		<h2>Welcome WASTELANDER</h2>
+		<hr>
+		<br>
+		<h2>&gt; CODEX</h2>
+		<br>
+		<h2>Initializing.....</h2>
+		<br>
+		<a href="#bground"><h3 class="selectText">[Background]</h3></a>
+		<a href="#rls"><h3 class="selectText">[Rules]</h3></a>
+		<a href="#cmp"><h3 class="selectText">[Campaigns]</h3></a>
+		<a href="#loc"><h3 class="selectText">[Locations]</h3></a>
+		<a href="#vlt"><h3 class="selectText">[Vaults]</h3></a>
+		<a href="#qst"><h3 class="selectText">[Quests]</h3></a>
+		<a href="#chr"><h3 class="selectText">[Characters]</h3></a>
+		<h2><br><br>&gt; <span class="blink">&#9615;</span></h2>
+		<br>
+		<!-- Background -->
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title" id="bground">Background</h4>
+				<h6 class="card-subtitle">Wild Wastes | A Fallout Conversion</h6> </div>
+			<div class="card-title-block"><img src="img/Fallout_Mural.jpg" class="img-fluid" alt="Card image" style="width:100%"></div>
+			<div class="card-block">
+				<p class="card-text">The series is set in a fictionalized United States in an alternate history scenario that diverged from our reality in the first half of the 20th century, but the exact date is unknown. The transistor was not invented, while vacuum tubes and atomic physics became the cornerstones to scientific progress, eventually achieving the technological aspirations of the early Atomic Age and locking society into a 1950s cultural stasis. Thus, in this alternative atompunk "golden age", a bizarre socio-technological status quo emerges, in which advanced robots, nuclear-powered cars, directed-energy weapons, and other futuristic technologies are seen alongside 1950s-era computers and telephones. The United States divides itself into 13 commonwealths and the aesthetics and Cold War paranoia of the 1950s continue to dominate the American lifestyle well into the 21st century, leading to America becoming a fascist police state and ultimately abandoning its democratic ideals in favor of a plutocratic system. Political dissidents were sent to prison camps where they were experimented on, and anyone who spoke out against the Enclave-controlled government, be they citizens or occupied Canadians, were executed en masse in the streets.
+					<br>
+					<br> More than a hundred years before the start of the series, an energy crisis emerged caused by the depletion of petroleum reserves, leading to a period called the "Resource Wars" – a series of events which included a war between the European Commonwealth and the Middle East, the disbanding of the United Nations, the U.S. annexation of Canada, and a Chinese invasion and subsequent military occupation of Alaska coupled with their release of the "New Plague" that devastated the American mainland. These eventually culminated in the "Great War" in the year 2077, a two-hour nuclear exchange on an apocalyptic scale, which subsequently created the post-apocalyptic United States, the setting of the Fallout world.
+					<br>
+					<br> Fallout draws from 1950s pulp magazine science fiction and superhero comic books, all rooted in Atomic Age optimism of a nuclear-powered future, though gone terribly awry by the time the events of the game take place. The technology is retro-futuristic, with various Raygun Gothic machines such as laser weaponry and boxy Forbidden Planet-style robots. Computers use vacuum tubes instead of transistors, architecture of ruined buildings feature Art Deco and Googie designs, energy weapons resemble those used by Flash Gordon, and what few vehicles remain in the world are all 1950s-styled. Fallout's other production design, such as menu interfaces, are similarly designed to resemble advertisements and toys of the Atomic Age. Advertising in the game such as billboards and brochures has a distinct 1950s motif and feel. The lack of retro-stylization was a common reason for criticism in spin-off games. </p>
+			</div>
+		</div>
+		<!-- Rules -->
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title" id="rls">Rules</h4>
+				<h6 class="card-subtitle">Wild Wastes | A Fallout Conversion</h6> </div>
+			<div class="card-title-block"><img src="img/vbDice.jpg" class="img-fluid" alt="Card image" style="width:100%"></div>
+			<div class="card-block">
+				<p class="card-text">While the Wasteland may be wild there still needs to be rules. The rules may be viewed or downloaded below.</p>
+				<!-- Skills -->
+				<div class="card-header" role="tab" id="hTwo">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col2" aria-expanded="false" aria-controls="col2">
+						Skills
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col2" class="collapse">
+					<div class="card-block">
+						<p class="card-text">
+							<ul type="square">
+								<li>Fighting (Ag)</li>
+								<li>Shooting (Ag)</li>
+								<li>Throwing (Ag)</li>
+								<li>Medicine (Sm)</li>
+								<li>Lock picking (Ag)</li>
+								<li>Hacking (Sm)</li>
+								<li>Repair (Sm)</li>
+								<li>Stealth (Ag)</li>
+								<li>Swimming (Ag)</li>
+								<li>Climbing (St)</li>
+								<li>Speech (Sp)</li>
+								<li>Taunt (Sp)</li>
+								<li>Intimidation (Sp)</li>
+								<li>Gambling (Sm)</li>
+								<li>Streetwise (Sm)</li>
+								<li>Investigation (Sm)</li>
+								<li>Notice (Sm)</li>
+								<li>Survival (Sm)</li>
+								<li>Tracking (Sm)</li>
+								<li>Knowledge (Sm)</li>
+								<li>Boating (Ag)</li>
+								<li>Driving (Ag)</li>
+								<li>Piloting (Ag)</li>
+								<li>Riding (Ag)</li>
+							</ul>
+							<br>
+							<strong>Hacking</strong>: Hacking determines the player’s skills with Robotics, Computers and Electronics in general.
+							<br>
+							<strong>Speech</strong>: Speech is the Persuasion and Barter skills merged together. This makes interactions with other wasters easier.
+						</p>
+					</div>
+				</div>
+				<!-- Races -->
+				<div class="card-header" role="tab" id="hThree">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col3" aria-expanded="false" aria-controls="col3">
+						Races
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col3" class="collapse">
+					<div class="card-block">
+						<p class="card-text">
+							<h4>Human:</h4>
+							<br> Humans are the average stock in the wasteland and while not as strong or long lived as super mutants or ghouls they are the majority. They control almost all societies in the wastes and tend to stick around no matter what.
+							<br>
+							<ul type="square">
+								<li>Adaptable: Humans begin with a Free Edge.</li>
+							</ul>
+							<br>
+							<br>
+							<h4>Ghoul:</h4>
+							<br> They may seem like your typical zombie but most say they don’t like the taste of brains. No one knows how ghouls came to be but many speculate radiation and a lot of “luck” had a hand in it.
+							<br>
+							<ul type="square">
+								<li>Abomination: Ghouls are generally thought to be all feral and are rarely if ever treated with respect. Ghouls gain the Outsider(Major) Hindrance.</li>
+								<li>Rotted: Ghouls tend to have necrotic flesh which gives off a rancid stench and this is never pleasant to be around. Ghouls gain the Ugly(Minor) Hindrance.</li>
+								<li>Atomic!: Ghouls can survive in radioactive areas for long amounts of time and even get healed by it. Their rad resistance is 6 and radiation levels act as positives to Natural Healing rolls. In radioactive areas ghouls receive +1 to toughness. However, when exposed to level 4 radiation for a long period, they randomly gain the Glowing One Hindrance or go Feral. Whilst Feral Ghouls are not dead, they no longer have a mind of their own and are subject to control by the GM.</li>
+								<li>Mutated Metabolism: Ghouls make natural healing checks every two days instead of five, and do not require food or water. In addition, Ghouls must make Vigour rolls for a Chem to have any effect.</li>
+							</ul>
+							<br>
+							<br>
+							<h4>Super Mutants:</h4>
+							<br>
+							<h5>First Gen:</h5>
+							<br> The GEN 1 super mutants were those created by the Master. While these variants retained most of their intelligence or even gained higher intelligence they were rare due to radiation free humans being required to make them. While they were less powerful than other variants they excelled at controlling other super mutants.
+							<ul type="square">
+								<li>Stronk!: Super Mutants start with d6 Strength and may increase it to d12+1 by normal advancement.</li>
+								<li>Cellular Reconstruction: Radiation Immunity, cannot die of old age.</li>
+								<li>G.O.A.T Professional: GEN 1 super mutants managed to keep their intelligence but they lost their old lives. Start with d6 smarts and may increase it to d12+1 with normal advancement.</li>
+								<li>Size +2: armour doesn’t fit unless custom tailored and toughness +1.</li>
+								<li>Meaty Figure: All Thumbs (small items) and Ugly</li>
+								<li>Outsider (Major): Super mutants are typically shot on sight without a very compelling reason not to fire.</li>
+							</ul>
+							<br>
+							<h5>Second Gen:</h5>
+							<br> GEN 2 super mutants were those created without the aid of the Master and tended to be stupid. While they may have been stupid they possessed incredible strength.
+							<ul type="square">
+								<li>Stronk!: GEN 2 super mutants start with d8 strength and may increase it to d12+2 by normal advancement.</li>
+								<li>Cellular Reconstruction: Radiation Immunity, cannot die of old age.</li>
+								<li>Simple Minded: The mind of a super mutant is all but destroyed by the process that transforms them. They have a –2 penalty on all Smarts rolls they make, and cannot increase their Smarts above a d8. Most super mutants have only fragments of memory from before they were changed.</li>
+								<li>Size +2: armour doesn’t fit unless custom tailored and toughness +1.</li>
+								<li>Grunt: Super Mutants are bred to take orders; if trying to act on its own free will (or otherwise oppose orders), they suffer a –4 to all Trait rolls.</li>
+								<li>Meaty Figure: All Thumbs (small items) and Ugly</li>
+								<li>Outsider (Major): Super mutants are typically shot on sight without a very compelling reason not to fire.</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+				<!-- Hindrances -->
+				<div class="card-header" role="tab" id="hFour">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col4" aria-expanded="false" aria-controls="col4">
+						Hindrances
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col4" class="collapse">
+					<div class="card-block">
+						<p class="card-text">
+							<h5>Anti-Survivalist (Major):</h5> You’ve grown up under a rock for your entire life and your knowledge of the outside world is minimal at best -2 to survival, tracking and streetwise.
+							<br>
+							<br>
+							<h5>Raider (Major):</h5> You made a name for yourself and are disliked by a lot of groups of the wasteland. Gain the Bloodthirsty hindrance and normal people start at uncooperative towards you.
+							<br>
+							<br>
+							<h5>Combat Shock (Minor):</h5> Some people freeze up when things get dangerous, and you are one of them. It could be due to fear, flashbacks, or something else; whatever the reason, when action cards are dealt in the first round of any combat, you must make a Spirit roll or start the combat Shaken.
+							<br>
+							<br>
+							<h5>RADICAL! (Minor):</h5> “I take radiation by its metaphorical horns “, is what you use to explain your strange obsession. Anytime you come across something radioactive you must attempt to pour it on yourself to test the effects. Start with a damaged radiation suit (+1 rad resist instead of +3). Your PC also believes the effects of radiation poisoning are caused by food poisoning.
+							<br>
+							<br>
+							<h5>Addict (Minor):</h5> Drugs are what you live for you’re not sure when you started but whenever drugs are around you must make a spirit roll at -2 to resist taking them immediately.
+							<br>
+							<br>
+							<h5>Chem Resistant (Minor):</h5> Due to a crazy mutation, your body resists all forms of drugs and medical stimulants make a vigour roll at -2 to achieve an effect.
+							<br>
+							<br>
+							<h5>Schizophrenia (Major):</h5> The character has a serious and negative mental illness. Players may choose or roll an alternate identity and a trigger from the provided tables. This illness also gives a -2 to charisma from anyone who notices.
+							<br>
+							<br>
+							<h5>Glowing One (Major Ghoul Only):</h5> Exposure to massive amounts of radiation have made you glow! While this may seem awesome it has caused your brain to fry a bit. -1 die type smarts, PC does not gain lighting penalties in melee combat, -4 stealth penalty, PC’s nearby take low level radiation exposure per day, gain the Rad Resistance edge, and the PC can make a spirit roll once per day at -4 to call feral ghouls to his/her aid (not the parties aid).
+							<br>
+							<br>
+							<h5>Falling Feral (Major Ghoul Only):</h5> It's not clearly understood why most ghouls eventually degrade into feral ghouls. But you know it's starting to happen to you, and soon. You cannot raise your Smarts die through advancement. Each month of game time, draw a card. If you draw a club, your Smarts decreases by one die type permanently. When (not if) your Smarts decreases to below 1d4, you permanently become a feral ghoul and completely lose yourself. There is no known way to reverse this process once it's begun.
+							<br>
+							<br>
+							<h5>Grunt (Major Super Mutant):</h5> The player is extremely suited for following orders and seems to possess only rudimentary intelligence. The player may not increase smarts past d4 and must follow all orders given to them from their master. If they lose their master, they must seek out a suitable replacement. The character must also make a Smarts check to avoid being fooled into doing actions possibly detrimental to them unless the action will obviously kill them.</p>
+					</div>
+				</div>
+				<!-- Edges -->
+				<div class="card-header" role="tab" id="hFive">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col5" aria-expanded="false" aria-controls="col5">
+						Edges
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col5" class="collapse">
+					<div class="card-block">
+						<p class="card-text">
+							<h5>Wastelander (Background):</h5>
+							<h6>Requirements: Novice</h6> You’ve grown up in the wastes for your entire life and have learned the skills you need to survive gain +1 to Fighting, Streetwise, and Notice. Cannot take Mercenary or Vault Dweller.
+							<br>
+							<br>
+							<h5>Mercenary (Background):</h5>
+							<h6>Requirements: Novice</h6> You’re a grizzled and tough mercenary you receive +1 to Shooting, Intimidation, and Survival. Cannot take Wastelander or Vault Dweller.
+							<br>
+							<br>
+							<h5>Vault Dweller (Background):</h5>
+							<h6>Requirements: Novice</h6> You’ve grown up underground for most your life and have received an education and the skills to get around in a vault. You gain +1 to Hacking, Lock picking and Repair rolls. Cannot take Wastelander or Mercenary.
+							<br>
+							<br>
+							<h5>Rad Resistance (Weird, Background):</h5>
+							<h6>Requirements: Novice, Vigour d8</h6> Be it a mutation or a healthy dose of lead in your veins you manage to take less radiation than other people +2 rad resistance.
+							<br>
+							<br>
+							<h5>Rad Sponge (Weird, Background):</h5>
+							<h6>Requirements: Novice, Rad Resistance, Vigour d10</h6> Your body is twisted on the inside and it likes to pull in ambient radiation for fun! Party members travelling beside you take ½ rad damage and you gain another +1 to rad resistance.
+							<br>
+							<br>
+							<h5>Lead Belly (Weird, Background):</h5>
+							<h6>Requirements: Novice, Rad Resistance, Vigour d8</h6> Eating bad quality radioactive food has no effect on your lead lined stomach, gain +1 rad resistance and the ability to eat and drink radioactive foodstuffs without penalty.
+							<br>
+							<br>
+							<h5>Cannibal (Weird):</h5>
+							<h6>Requirements: Novice, Lead Belly</h6> You have become unaccountably peckish when it comes to human flesh. Gain the ability to eat dead human enemies. People who see you doing this will not trust you ever again so -4 charisma to people who saw you eat someone.
+							<br>
+							<br>
+							<h5>Psyker (Background):</h5>
+							<h6>Requirements: Novice, Human, Ghoul, or Super Mutant</h6> You are a Psyker, a rare wastelander that has unlocked psychic potential at great cost. This functions as Arcane Background (Psionics) from SWD, with the following changes. You must choose known powers from the following list; the powers must be of your rank or below: armour, barrier, beast friend, blind, bolt, boost/lower trait, confusion, deflection, disguise, empathy [TBL], far sight, fear, havoc, invisibility, mind reading, pummel, psychometry [TBL], puppet, quickness, slow, slumber, soothe [TBL], speak language, speed, stun, succour, telekinesis, and warrior's gift. Heavy Burden: Psykers are rare, and the process that unlocks their potential tends to cause severe damage to them. You must choose an additional Major hindrance, subject to Overseer approval, to reflect this trauma. You do not gain hindrance points for it. This is to reflect the rarity of the gift, as well as its power compared to other edges.
+							<br>
+							<br>
+							<h5>Medic:</h5>
+							<h6>Requirements: Novice, Knowledge</h6> (Medicine) d8, Medicine d6, Smarts d8 You’ve received some formal medical training in your wasteland life and this knowledge is rare. While you are not a professional by any means you are still able to patch people up without issue. Able to heal people without the no supplies penalty. You can make stimpacks without the chemist perk and you instead use Knowledge (Medicine) for making stimpacks.
+							<br>
+							<br>
+							<h5>Doctor:</h5>
+							<h6>Requirements: Veteran, Medic, Knowledge (Medicine) d12, Medicine d12, Smarts d10</h6> You’ve received a lot of formal medical training in your wasteland life and this knowledge is rare. You are a professional in your trade and can heal the most grievous of wounds. You can heal people with no penalties. You can also make stimpacks, super-stimpacks, and med-x without the chemist perk and you instead use Knowledge (Medicine) for making these drugs.
+							<br>
+							<br>
+							<h5>Chemist (Seasoned):</h5>
+							<h6>Requirements: Novice, Knowledge (Chemistry) d6+</h6> You know how to make chems, and maintain a stock of ingredients that allow you to produce 5 Complexity worth of known chems a day. Creating chems takes about an hour. When you select this edge, you start with several Complexity worth of known chems equal to 1/2 your Knowledge (Chemistry) skill. You can learn more by increasing your Knowledge (Chemistry), locating them in the wasteland, or learning them from other chemists. If you make these chems without a laboratory they go bad in 1d4 days.
+							<br>
+							<br>
+							<h5>Smooth Criminal:</h5>
+							<h6>Requirements: Novice, Speech d6, Streetwise d6</h6> Speech +1/Charisma +1 increase allows you to get better prices and better reactions from slavers/raiders/triggermen.
+							<br>
+							<br>
+							<h5>Smooth Operator:</h5>
+							<h6>Requirements: Novice, Speech d6, Intimidation d6</h6> Speech +1/Charisma +1 increase allows you to get better prices and better reactions from guards/mercenaries/military.
+							<br>
+							<br>
+							<h5>Noir Detective:</h5>
+							<h6>Requirements: Novice, Speech d6, Investigation d6</h6> Speech +1/Charisma +1 increase allows you to get better prices and better reactions from civilians/Vault- Tec/traders.
+							<br>
+							<br>
+							<h5>Rapid Reload:</h5>
+							<h6>Requirements: Seasoned, Shooting d10, Agility d10</h6> Need to reload those hard to reload weapons? Fully reloading even ⅓ action weapons is now a free action and may be accomplished while running without an Agility roll.
+							<br>
+							<br>
+							<h5>Run ‘n Gun:</h5>
+							<h6>Requirements: Seasoned, Shooting d10, Agility d10</h6> You’ve learned the art of keeping your aim steady while running full pace. May run and shoot without penalty.
+							<br>
+							<br>
+							<h5>Robco Certified Tinkerer:</h5>
+							<h6>Requirements: Novice, Hacking d6, Smarts d8, Repair d6</h6> You are trained in the maintenance and design of robots. You gain a +2 bonus on Hacking rolls related to robots. In addition, you may build a basic robot worth up to 10,000c (see the rules in the robotics section). You can spend additional starting money to upgrade this robot. If your robot is destroyed, you can rebuild it at half cost and a week’s worth of work in a workshop with a suitable supply of spare parts.
+							<br>
+							<br>
+							<h5>Robco Certified Professional:</h5>
+							<h6>Requirements: Seasoned, Robco Certified Tinkerer, Hacking d8, Smarts d8, Repair d8</h6> You are a skilled roboticist, and have upgraded your own personal robot significantly. You gain another +1 bonus on Hacking rolls related to robots. You can add 5,000c worth of modifications to your robot, and your robot. If your robot is destroyed, you can rebuild it at half cost and 3 days’ worth of work in a workshop with a suitable supply of spare parts.
+							<br>
+							<br>
+							<h5>ZAX Professional:</h5>
+							<h6>Requirements: Veteran, Robco Certified Professional, Hacking d12, Smarts d10, Repair d10</h6> Nobody knows more about robots than you. You gain another +1 bonus on Hacking rolls related to robots and your robot (only 1 if you have more) is a full wild card. You may also spend a significant amount of time building a ZAX computer at your DM’s discretion.
+							<br>
+							<br>
+							<h5>Recycler:</h5>
+							<h6>Requirements: Veteran, Repair d12</h6> You may use the recover arrows rule for every 5 units of energy weapon ammo.
+							<br>
+							<br>
+							<h5>Terrifying Presence:</h5>
+							<h6>Requirements: Seasoned, Intimidation d8+</h6> You’ve gained the skill of instilling fear within the hearts of your enemies. Gain +1 to Intimidation and an ability where on two raises the enemy flees in terror.
+							<br>
+							<br>
+							<h5>Silent Running:</h5>
+							<h6>Requirements: Veteran, Stealth d10+</h6> Years of learning to run silently on all terrain has made you an incredibly sneaky person. While running, you do not take -2 to your stealth rolls.
+							<br>
+							<br>
+							<h5>Action Boy / Action Girl:</h5>
+							<h6>Requirements: Wild Card, Seasoned, Agility d10+, Elan</h6> You're unusually quick and skilled at doing multiple things at once. Each additional action beyond the first imposes only a –1 penalty for you, rather than the normal –2 per additional action.</p>
+					</div>
+				</div>
+				<!-- Chems + Addiction -->
+				<div class="card-header" role="tab" id="hSix">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col6" aria-expanded="false" aria-controls="col6">
+						Chems + Addiction
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col6" class="collapse">
+					<div class="card-block">
+						<p class="card-text">
+							Chems have powerful effects but like all drugs have dangerous comedowns. All chems have a cost, complexity, duration, addiction modifier, effect and comedown. Complexity is used in the chemist edge. Chems also have a duration and the user generally feels the comedown approaching. Certain comedown effects can be avoided with a Vigour roll but the majority must be suffered through.
+							<br>
+							<br> To see the list of chems and their effects download the Overseers Manual pdf.</p>
+					</div>
+				</div>
+				<!-- Radiation -->
+				<div class="card-header" role="tab" id="hSeven">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col7" aria-expanded="false" aria-controls="col7">
+						Radiation
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col7" class="collapse">
+					<div class="card-block">
+						<p class="card-text">Radiation is a hazard that is prevalent around the globe. Radiation receives a new stat Rad Resistance which functions as toughness against radiation sources.
+							<br>
+							<br> Rad Resistance is equal to half a character’s Vigour. Taking radiation damage is handled the same way wounds are tracked. Rad Damage is secretly rolled every 1 minute a character is in an irradiated area.
+							<br>
+							<br> Characters may find out the background radiation by using Geiger counters, Glowing Ones are also able to “feel” the level of radiation in the area.
+							<br>
+
+							<table class="table table-sm table-responsive table-hover table-striped">
+								<thead class="thead-inverse">
+									<tr>
+										<th>RAD LEVEL</th>
+										<th>DAMAGE</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Low</td>
+										<td>d4</td>
+									</tr>
+									<tr>
+										<td>Medium</td>
+										<td>d6</td>
+									</tr>
+									<tr>
+										<td>High</td>
+										<td>d8</td>
+									</tr>
+									<tr>
+										<td>Lethal</td>
+										<td>d12</td>
+									</tr>
+								</tbody>
+							</table>
+							<br> Rad Poisoning functions like wounds for a character but with special effects on the Rad Poisoning chart. Upon incapacitation, a Vigour roll is required to live. Upon death by radiation roll a d20. If the player receives a 15-20 their character is ghoulified and loses 1 die type strength, vigour, and agility.
+							<br>
+							<br> To reduce a characters Rad Poisoning level, they must take RadAway, Vodka, or receive treatment from a doctor.
+							<br>
+							<br>
+							<table class="table table-sm table-responsive table-hover table-striped">
+								<thead class="thead-inverse">
+									<tr>
+										<th>RAD POISONING LEVEL</th>
+										<th>EFFECTS</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Nausea, fatigued. Strength drops one die.
+										</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Vomiting, hair loss. Agility and Vigour drop one die.
+										</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Skin loss; All Traits drop one die, –2 Charisma.</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Agonizing pain; Incapacitation.
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</p>
+					</div>
+				</div>
+				<!-- Equipment -->
+				<div class="card-header" role="tab" id="hEight">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col8" aria-expanded="false" aria-controls="col8">
+						Equipment
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col8" class="collapse">
+					<div class="card-block">
+						<p class="card-text">
+							To view the equipment lists download the equipment pdf in the download section.
+							<br><br>
+								Your character starts out with 500 caps and the clothes on their back. Use the tables below to buy some starting gear.
+								<br>
+								<br>
+								<h5>Melee Weapons:</h5> The iconic weapons of psychotic bandits tend to be the cheapest and easiest to obtain.
+								<br>
+								<br>
+								<h5>Projectile Weapons:</h5> Ballistic Firearms are the most prevalent form of long range deathdealing in the wastes. While higher calibre ammunition may be rare, weapons can be retooled to accept other calibres.
+								<br>
+								<br>
+								<h6>Retooling:</h6> Retooling a weapon for different ammunition types cost ½ the listed weapon price, ½ their weight in scrap, and 2d6 hours with a sufficient workshop.
+								<br>
+								<br>
+								<h6>Magazines:</h6> Guns require magazines and must be purchased* to use the gun w/o having to chamber every shot. Magazines cost 1/10 the guns listed price and come empty. You may reload magazines for your weapons while not in combat or in 1d4 minutes. Empty Magazines weigh 1 lb.
+								<br>
+								<br>
+								<h6>Mounted:</h6> Mounted weapons require the user to take 1d4 turns setting up their mounting hardware to be fired. They cannot be hip fired unless you are wearing power armour.
+								<br>
+								<br>
+								<h6>Grenade Launchers:</h6> Grenade launchers while deadly have a safety feature. 40mm grenades must fly at least 20ft to prime to explode. If an enemy is hit within 20ft they take 2d4 bludgeoning damage. * Weapons with no mag ENC have internal magazines or projectile ammunition
+								<br>
+								<br>
+								<h6>Energy Weapons:</h6> Energy Weapons are the bright flash death machines of the wastes. They turn your foes to ash and green goo with cheap plentiful ammunition. Energy weapons are very advanced however and net a user with -4 to their combat repair rolls. Energy Weapons deal normal damage to power armour.
+								<br>
+								<br>
+								<h5>Explosives:</h5> Need to turn a room of enemies into fine mist? Invest in explosives! However, stock up in the repair skill as to setup landmines you must roll. Landmines: To setup a landmine make a repair roll, a Success the landmine is armed and you have 10 seconds to move away, on a Failure you think its armed but it is not, on a Critical Failure the landmine explodes immediately.
+								<br>
+								<br>
+								<h6>C4:</h6> C4 is a special explosive that a character may spend 30 seconds shaping onto a surface. This allows locks to be precision detonated and doors to be bypassed. If you plan on doing this make your plans clear to the DM. The shaped charge consumes the C4 and projects the explosion with the Cone template in the direction the player specified on setup.
+								<br>
+								<br>
+								<h5>Heavy Weapons:</h5> Heavy weapons are the bane of all men. Meeting an enemy with a Fat Man means certain doom for anyone. Heavy weapons ½ the effective armour of anything without Heavy Armour.
+								<br>
+								<br>
+								<h5>Ammunition:</h5> Ammunition listed can be modified on purchase as follows:
+								<ul style="square">
+									<li>Surplus: Surplus ammunition is 50% the price of regular ammo but makes guns fail on shooting rolls 3 and under.</li>
+									<li>Armour Piercing: Give your weapon the ability to punch through steel. 25% mark-up on price and AP +1.</li>
+									<li>Incendiary: Want to give your bullets a burning sensation. 50% mark-up on price and Burning Weapon modifier for bullets.
+									</li>
+									<li>Explosive: Give your bullets a bang for your buck. 200% markup on price and deals halfbullet damage in Small Burst template.
+									</li>
+								</ul>
+								<h5>Armour:</h5> If you want to specifically armour your character split the price of the armour as follows, 1/6 for each arm and leg and the chest is 2/6 the price. Armour values follow the traditional melee/firearm.
+								<br>
+								<br>
+								<h6>Power Armour:</h6> Power Armour makes you a walking tank for a high price. Weapons that are not Heavy Weapons must make it through double your armour. Heavy Weapons half your armour value and energy weapons encounter the listed value. Carry weight is doubled as well, and when wearing the power armour, it weighs nothing.
+								<br>
+								<br>
+								<h6>Kevlar Vests:</h6> The most versatile torso armour in the wastes. While generally rare from military sources, pre-war police had a decent amount stocked. This armour can have a set of plates placed inside of it, effectively increasing the armour value.</p>
+					</div>
+				</div>
+				<!-- Gear Condition -->
+				<div class="card-header" role="tab" id="hNine">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col9" aria-expanded="false" aria-controls="col9">
+						Gear Condition
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col9" class="collapse">
+					<div class="card-block">
+						<p class="card-text">
+							All weapons have a rating; a highcondition weapon will function more like a weapon in its prime, but will also be much more valuable and much more difficult to find.
+							<br>
+							<br> When a critical failure is rolled on the Shooting or Fighting roll, or if the weapon is exposed to particularly bad conditions (submerged in mud, for example), the quality of the weapon is reduced. Weapon condition can be restored with a successful Repair roll, proper parts and tools, and enough time. The ratings consist of Poor, Worn, Mediocre, and High. Highquality weapons use the statistics listed in the Gear section. For every step below that, roll on the weapon condition table below. If a weapons quality drops below Poor, it is no longer usable.
+							<br>
+							<br>
+							<table class="table table-sm table-responsive table-hover table-striped">
+								<thead class="thead-inverse">
+									<tr>
+										<th>WEAPON CONDITION TABLE</th>
+										<th>D4</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Damage –1</td>
+										<td>1
+										</td>
+									</tr>
+									<tr>
+										<td>Inaccurate/Unbalanced (Shooting/Fighting –1)</td>
+										<td>2
+										</td>
+									</tr>
+									<tr>
+										<td>Jam chance increased +1 (Shooting/Fighting [mechanical only])
+										</td>
+										<td>3</td>
+									</tr>
+									<tr>
+										<td>Reroll</td>
+										<td>4
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							Armor functions a bit differently. When a user takes a wound on his armor, roll a d10. On a 1, the armor degrades. Roll a d4 to determine the effects.
+							<br>
+							<br>
+							<table class="table table-sm table-responsive table-hover table-striped">
+								<thead class="thead-inverse">
+									<tr>
+										<th>ARMOUR CONDITION TABLE</th>
+										<th>D4</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Armor is reduced by 1 with a Raise on an attack roll</td>
+										<td>1
+										</td>
+									</tr>
+									<tr>
+										<td>Poor Straps (weight increased by 33%)</td>
+										<td>2
+										</td>
+									</tr>
+									<tr>
+										<td>Fragile (Roll a d6 to break instead of a d10)</td>
+										<td>3</td>
+									</tr>
+									<tr>
+										<td>Reroll</td>
+										<td>4
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							The price is also modified by the quality: High-quality items cost double the listed price; Worn costs 75% while Poor quality costs 50% (rounded up). Weapons below Poor typically cost 25% of the listed price.
+							<br>
+							<br> Parts from gear can be utilized in repairing a similar item, but the quality can impose penalties on the Repair roll: Mediocre parts impose a –1, while Poor parts impose a –2 (these do not stack; use the lowest penalty for the roll). Parts from unusable weapons apply a –4 penalty to Repair rolls.
+						</p>
+					</div>
+				</div>
+				<!-- Cybernetics -->
+				<div class="card-header" role="tab" id="hTen">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col10" aria-expanded="false" aria-controls="col10">
+						Cybernetics
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col10" class="collapse">
+					<div class="card-block">
+						<p class="card-text">
+							Cybernetics allow even the weakest person to become a powerful athlete. When installing these bionic suites, a skilled doctor is required. Cybernetic components are rarely invisible from observers. To make a cybernetic part invisible to all but direct searches it costs an additional 50%. Cybernetics have the following statistics.
+							<br>
+							<br>
+							<strong>Strain:</strong> The stress the cybernetics place on the character’s body. Characters suffer fatigue if they exceed their maximum strain.
+							<br>
+							<br>
+							<strong>Cost:</strong> The price of the cybernetic and it’s cost of installation. Be warned, when using cybernetics, they can be disabled for 1d4 hours with pulse weapons on a raise.
+							<br>
+							<br>
+							<h5>Installation/Removal:</h5> The cost per bionic part includes installation. Visiting an unskilled doctor reduces the cost 25% but the character must make a Vigour roll at -4. If succeeded, the implant is fine, if failed the implant is rejected with or without a refund.
+							<br>
+							<br> Removal costs 25% of the implant’s cost but may be free from unskilled doctors if they get to keep the implant. Removal from unskilled doctors makes the character roll Vigour at -2 or be Exhausted from the botched surgery for two weeks.
+							<br>
+							<br>
+							<strong>Limbs:</strong> If a cybernetic part was meant to replace a limb and didn’t take, the character is without the limb. Prosthetics cost 1200c and characters suffer a -1 to all rolls with the prosthetic.
+							<br>
+							<br>
+							<h5>Strain:</h5> Cybernetics are invasive and replace bone, tissue and place electrical and biological strain on the character.
+							<br>
+							<br> Every cybernetic enhancement has a Strain rating. The amount of cybernetics a character can place in their body is equal to half their Vigour or Spirit die, whichever is lower. This is called <strong>Maximum Strain.</strong>
+							<br>
+							<br> Once a user reaches their Maximum Strain they cannot handle any more stress to their body.
+							<br>
+							<br> If additional strain is incurred the user suffers a level of constant Fatigue equal to the amount exceeded. No character can exceed their Max Strain by more than two points.</p>
+					</div>
+				</div>
+				<!-- Robotics -->
+				<div class="card-header" role="tab" id="hEleven">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col11" aria-expanded="false" aria-controls="col11">
+						Robotics
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col11" class="collapse">
+					<div class="card-block">
+						<p class="card-text">
+							Robot companions can be a big help in the wasteland and can be used as mobile gun platforms, mules, and mobile shields. Robots like all machines require maintenance to function at peak performance.
+							<br>
+							<br>
+							<strong>Power:</strong> Robots run off Microfusion Cells and run for a week. After a week, the cells must be replaced or the robot becomes inactive. The number of cells needed is equal to the amount of mods / 2 (rounded up).
+							<br>
+							<br>
+							<strong>Maintenance:</strong> Each month of use, the owner must pay 1% of the robots base cost in maintenance. If the maintenance isn’t paid, the player must roll on the Glitch Table.
+							<br>
+							<br>
+							<table class="table table-sm table-responsive table-hover table-striped">
+								<thead class="thead-inverse">
+									<tr>
+										<th>GLITCH TABLE</th>
+										<th>2D6</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><strong>Breakdown:</strong> Something in the robot shorts out. It is Incapacitated (with three wounds if a Wild Card).</td>
+										<td>2
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Fatigue:</strong> The robot suffers a form of Fatigue. Each level can be Repaired at half the cost and time of regular repairs. If the Fatigue leads to Incapacitation, the robot suffers a Breakdown instead (see above).</td>
+										<td>3-4
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Glitch:</strong> One of the robot’s Traits is lowered by a die type until Repaired at half the usual cost and time. Roll a d6: 1=Agility, 2=Smarts, 3=Spirit, 4=Strength, 5=Vigour, 6= a randomly determined skill.</td>
+										<td>5-6</td>
+									</tr>
+									<tr>
+										<td>No Effect</td>
+										<td>7
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Systems:</strong> One of the robot’s Mods, determined randomly, no longer functions.</td>
+										<td>8-9
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Power Leak:</strong> The robot’s batteries begin to drain. Each time this result occurs, battery life is halved until they are Repaired.</td>
+										<td>10
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Personality:</strong> The robot’s AI develops a new personality trait. Use the Allied Personality Table from Savage Worlds. The extent of the trait depends on the robot’s level of “intelligence,” but even a relatively basic AI can be affected.</td>
+										<td>11
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Prime Directive:</strong> The robot no longer obeys (or perhaps reinterprets) its primary function. The results should be dangerous and potentially deadly. The exact effect may not be apparent until a situation presents itself.</td>
+										<td>12
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							To create a robot, use the template below and the Robotic Modifications table.
+							<br>
+							<br>
+							<h5>Basic Robot:</h5> The basic robot is sentient and interprets orders on its Smarts. The robot costs 10,000c and can hold up to 5 points of robotic modifications. It has 5 attribute points and 15 skill points. Each attribute point and skill points can be dropped for a 1000c discount and an additional mod slot.
+							<br><strong>Attributes:</strong> Agility d4, Smarts d4, Spirit d4, Strength d4, Vigour d4
+							<br><strong>Skills:</strong> -
+							<br> <strong>Special Abilities:</strong>
+							<br>
+							<ul type="square">
+								<li><strong>Construct:</strong> +2 to recover from being Shaken; does not breath; immune to poison and disease; ignores one level of wound penalties.</li>
+								<li><strong>Environmental Weakness
+								(Electricity):</strong> Robots suffer +4 damage from electrical attacks.</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+				<!-- Transportation -->
+				<div class="card-header" role="tab" id="hTwelve">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col12" aria-expanded="false" aria-controls="col12">
+						Transportation
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col12" class="collapse">
+					<div class="card-block">
+						<p class="card-text">Transportation is up to the DM for Fallout. In adventures that I’ve created there are mutated animals, vehicles galore, vertibirds, jets, tanks and MLRS missile platforms.</p>
+					</div>
+				</div>
+				<!-- Bestiary -->
+				<div class="card-header" role="tab" id="hThirteen">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col13" aria-expanded="false" aria-controls="col13">
+						Bestiary
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col13" class="collapse">
+					<div class="card-block">
+						<p class="card-text">To view the many wee beasties of the wasteland download the pdf in the download section.</p>
+					</div>
+				</div>
+				<!-- Download -->
+				<div class="card-header" role="tab" id="hFourteen">
+					<h5 class="mb-0">
+						<a class="collapsed" data-toggle="collapse" data-target="#col14" aria-expanded="false" aria-controls="col14">
+						Download
+						</a>
+						<a class="glyphicon glyphicon-plus"></a>
+					</h5>
+				</div>
+				<div id="col14" class="collapse">
+					<div class="card-block">
+						<a class="btn btn-primary" href="Download/WILDWASTESCOLORIZED.pdf" download>Download Overseers Manual</a>
+						<a class="btn btn-primary" href="Download/WWEQUIPMENTBEST.pdf" download>Download Equipment Lists</a>
+						<a class="btn btn-primary" href="Download/WWCharacterSheet.pdf" download>Download Character Sheet</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Plot Point Campaigns -->
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title" id="cmp">Plot Point Campaigns</h4>
+				<h6 class="card-subtitle">Wild Wastes | A Fallout Conversion</h6> </div>
+			<div class="card-block">
+				<p class="card-text">TODO</p>
+			</div>
+		</div>
+		<!-- Quests -->
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title" id="qst">Quests</h4>
+				<h6 class="card-subtitle">Wild Wastes | A Fallout Conversion</h6> </div>
+			<div class="card-block">
+				<p class="card-text">TODO</p>
+			</div>
+		</div>
+		<!-- Locations -->
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title" id="loc">Locations</h4>
+				<h6 class="card-subtitle">Wild Wastes | A Fallout Conversion</h6> </div>
+			<div class="card-block">
+				<p class="card-text">The Wastes have loads of locations to explore. Check them out below...</p>
+				<div id="accordion" role="tablist" aria-multiselectable="true">
+					<div class="card">
+						<div class="card-header" role="tab" id="headingTwo">
+							<h5 class="mb-0">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									San Francisco
+								</a>
+								<a class="glyphicon glyphicon-plus"></a>
+							</h5>
+						</div>
+						<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+							<div class="card-block">
+								<p class="card-text">San Francisco is one of the most vibrant and thriving communities in the Wasteland. Visit many factions such as the Shi, Hubologists, and NCR. Using the influence of the local factions you can reshape the city the way your players want it to be.</p>
+								<a class="btn btn-primary" href="Download/WWSanFran.pdf" download>Download Locale</a>
+								<a class="btn btn-primary" href="Download/SWCSanFran.pdf" download>Download Characters</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Vaults -->
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title" id="vlt">Vaults</h4>
+				<h6 class="card-subtitle">Wild Wastes | A Fallout Conversion</h6> </div>
+			<div class="card-block">
+				<p class="card-text">The Wastes have great secrets hidden beneath them. Some are functional societies, some are dark horrors and some were never inhabited. Find out the secrets of these hidden vaults...</p>
+			</div>
+		</div>
+		<!-- Characters -->
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title" id="chr">Characters</h4>
+				<h6 class="card-subtitle">Wild Wastes | A Fallout Conversion</h6> </div>
+			<div class="card-block">
+				<p class="card-text">Check out significant characters below...</p>
+			</div>
+		</div>
+
+	</div>
+	<footer class="footer">
+		<div class="container"> <span>&copy; Myriad</span> </div>
+	</footer>
+	<script>
+		$(document).ready(function () {
+			var id = 0;
+			$(document).on('click', '.close', function () {
+				var $target = $(this).parents('.card');
+				$target.hide('fast', function () {
+					$target.remove();
+				});
+			});
+
+			$('.collapsed').on('shown.bs.collapse', function () {
+				$(this).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+			}).on('hidden.bs.collapse', function () {
+				$(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+			});
+		});
+	</script>
+</body>
+
+</html>

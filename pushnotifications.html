@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Savage Enemy Generator</title>
+
+	<!-- FIREBASE INITIALIZATION -->
+	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-messaging.js"></script>
+
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<!-- Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/tether.min.css">
+	<script src="scripts/tether.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+	<!-- CSS Stylesheets -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/eg.css"> </head>
+</head>
+
+<body>
+	<div class="jumbotron">
+		<div class="genLoc">
+			<h1>FCM Messaging</h1>
+			<p class="lead">FCM Messaging via PHP using Topics</p>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sendModal">Send Message</button>
+		</div>
+	</div>
+	<nav class="navbar navbar-masthead navbar-default navbar-fixed-top" id="topNav">
+		<div class="container"> <a class="navbar-brand" href="#">PushNotifications<span class="sr-only">(current)</span></a>
+		</div>
+	</nav>
+	<div class="container">
+		<form class="form-horizontal"></form>
+	</div>
+	<!-- Send Modal -->
+	<div class="modal fade" id="sendModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"> <a class="close" data-dismiss="modal">&times;</a>
+					<h4 class="modal-title">Send Notification</h4>
+				</div>
+				<div class="modal-body">
+					<label for="msgTitle">Title</label>
+					<input type="text" class="form-control" data-width="100%" id="msgTitle" required>
+					<!--
+					<label for="msgSubtitle">SubTitle</label>
+					<input type="text" class="form-control" data-width="100%" id="msgSubtitle" required>
+					-->
+					<label for="msgBody">Message</label>
+					<input type="text" class="form-control" data-width="100%" id="msgBody" required>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="sendNotification">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container"> <span>&copy; Myriad</span> </div>
+	</footer>
+	<script>
+		$(document).ready(function () {
+			var id = 0;
+
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyCkaI1tKC-MmHFG9MBq3dyKjbp0-bEkCXY",
+				authDomain: "adspushfirebase.firebaseapp.com",
+				databaseURL: "https://adspushfirebase.firebaseio.com",
+				storageBucket: "adspushfirebase.appspot.com",
+				messagingSenderId: "814784781990",
+			};
+			firebase.initializeApp(config);
+			
+			/*
+			const messaging = firebase.messaging();
+			messaging.requestPermission().then(function () {
+				console.log("Have Permission")
+				return messaging.getToken();
+			})
+			.then(function(token) {
+				console.log(token);
+			})	.catch(function(err) {
+				console.log("Error Occured");
+			});
+			*/
+
+			$('#sendNotification').click(function () {
+				$('#sendModal').modal('toggle');
+				var Title = $('#msgTitle').val();
+				var Message = $('#msgBody').val();
+
+				// var msgArr = {"msgTitle":Title,"msgSubtitle":SubTitle,"msgBody":Message};
+
+				// console.log(JSON.stringify(msgArr));
+
+				$.ajax({
+					url: 'push.php',
+					type: 'POST',
+					data: {
+						target: "test",
+						data: {
+							"body": Message,
+							"title": Title
+						}
+					}
+				}).success(function (message) {
+					console.log(message);
+				});
+			});
+		});
+	</script>
+</body>
+
+</html>
